@@ -1,0 +1,116 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin:0px;
+    background-color: rgb(172, 206, 172);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+main {
+    height: 100%;
+    width: 100%;
+    /*main is a block element so by default width = 100%*/
+
+
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+    
+/*some convenient default styling
+^^ The box-sizing property allows us to include the padding and border in an element's total width and height.
+If you set box-sizing: border-box; on an element, padding and border are included in the width and height */
+
+/* This sets the drums as the background image.
+It will have the full height and width of the screen for laptops and desktops.
+I will media query for smaller devices, so it will not cover the fullscreen, 
+as these devices are narrower and the image stretches, making the site less useable.*/
+
+    background-image: url('./assets/drums.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+
+
+
+    display: grid;
+    grid-template-rows: 17% 10% 10% 13% auto;
+}
+
+
+/* Each row becomes a parent grid container, of horizontally arranged child elements. 
+The size of each child is specified by %s */
+
+.button_rows {
+    display: grid;
+}
+
+#row1 {
+    grid-template-columns: 25% 10% 37% 10% auto;
+}
+
+#row2 {
+    grid-template-columns: 80% 10% auto;
+}
+
+#row3 {
+    grid-template-columns: 33% 20% 20% auto;
+}
+
+#row4 {
+    grid-template-columns: 25% 10% 30% 10% auto;
+}
+
+#row5 {
+    grid-template-columns: 35% 35% auto;
+}
+
+
+.buttons{
+    height: 50%;
+    width: fit-content;
+    margin: auto;
+    background-color: rgb(142, 173, 142);
+    border-color: rgb(27, 45, 27);
+    border-width:thin;
+
+    color: rgb(27, 45, 27);
+    font-weight: bold;
+    font-size: 4vh;
+    padding: 0 10%;
+
+}
+
+/* -----------media queries------------- */
+
+
+/* querying for tablets and mobile phones*/
+@media (max-width: 1024px) {
+
+    body {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        height:45%;
+        width: 100%;
+    
+    }
+
+    .buttons{
+        color: rgb(27, 45, 27);
+        height: 100%;
+        width: fit-content;
+        font-size: 2vh;
+
+    }
+
+    #bass {
+        height: 75%;
+    }
+
+}
